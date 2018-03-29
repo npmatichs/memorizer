@@ -1,18 +1,18 @@
 'use strict';
 
 const path = require('path');
-const config = require('config');
 
 const packagejson = require('./package');
+
 const paths = packagejson.namespaces;
 
 const workspaceFolder = __dirname;
 
 const lookupKeywords = {
   workspaceFolder: workspaceFolder
-}
+};
 
-let loadedNamespaces = {};
+const loadedNamespaces = {};
 
 const namespaces = Object.keys(paths);
 
