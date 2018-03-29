@@ -1,0 +1,34 @@
+{
+  "name": "memorizer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "namespaces": {
+    "app_path": "${workspaceFolder}\\app",
+    "config_path": "${workspaceFolder}\\config",
+    "services_path": "${workspaceFolder}\\services",
+    "api_path": "${workspaceFolder}\\services\\api",
+    "common_path": "${workspaceFolder}\\common",
+    "errors_path": "${workspaceFolder}\\common\\errors"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/mocha -u tdd --timeout 999999 --colors --recursive ./tests/",
+    "eslint": "./node_modules/.bin/eslint --fix app/ services/"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^1.8.4",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-mocha": "^5.0.0",
+    "eslint-plugin-react": "^7.7.0"
+  },
+  "dependencies": {
+    "config": "^1.30.0",
+    "restify": "^7.1.0",
+    "url-join": "^4.0.0"
+  }
+}
