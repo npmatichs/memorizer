@@ -24,14 +24,14 @@ const componentsPath = `${ns.api_path()}/components`;
 const components = fs.readdirSync(componentsPath);
 
 if (components.length) {
-  for (const i in components) {
-    const componentStat = fs.statSync(`${componentsPath}/${components[i]}`);
+  components.forEach((component) => {
+    const componentStat = fs.statSync(`${componentsPath}/${component}`);
 
     if (componentStat && componentStat.isDirectory()) {
-      const routes = require(`${componentsPath}/${components[i]}/routes`);
+      const routes = require(`${componentsPath}/${component}/routes`);
       const options = new RouteOptions({
-        component: components[i],
-        path: `/api/${components[i]}`,
+        component: component,
+        path: `/api/${component}`,
         version: config.get('api.version')
       });
 
@@ -46,7 +46,7 @@ if (components.length) {
 
       routes(server, options);
     }
-  }
+  });
 } else {
   throw new MissingComponentsError();
 }
